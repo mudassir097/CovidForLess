@@ -1,0 +1,87 @@
+body {
+  font-family: roboto;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 50%;
+}
+#container2 {
+  width: 50%;
+  padding: 0 25px 20px 10px;
+  position: absolute;
+  top: 28%;
+  left: 25%;
+  transform: rotate(-75%, -75%);
+  background-color: #e0e5e9;
+  border: 4px solid #b0e0e6;
+  border-radius: 5px;
+  color: #688c97;
+  font-weight: bold;
+  box-shadow: 10px 10px 10px #888;
+}
+
+#title {
+  text-decoration: none;
+}
+
+#quiz {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  text-indent: 30px;
+  display: none;
+  font-weight: 400;
+  font-size: x-large;
+  text-align: auto;
+  padding: 0 25px 20px 10px;
+}
+
+.button {
+  border: 1px solid;
+  width: 100px;
+  border-radius: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+  position: relative;
+  float: right;
+  background-color: #e6e8e9;
+  margin: 30px 20px 0 0;
+}
+
+.button.active {
+  background-color: #151616;
+  color: #ffffff;
+  text-decoration: none;
+}
+button {
+  position: relative;
+  float: right;
+}
+
+.button a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  margin-left: 0%;
+}
+
+#prev {
+  display: none;
+}
+
+#start {
+  display: none;
+  width: 90px;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "my super hero",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mudassir097/CovidForLess.git"
+  },
+  "author": "mudassir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mudassir097/CovidForLess/issues"
+  },
+  "homepage": "https://github.com/mudassir097/CovidForLess#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "unirest": "^0.6.0"
+  }
+}

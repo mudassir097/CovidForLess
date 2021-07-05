@@ -10,7 +10,7 @@ fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
  .then(data => {
 
   let total_value = data.total_values;
-  console.log(total_value);
+  console.log(data);  
   
   let active_value = Number(total_value['active']) ;
   let recovered_value = Number(total_value['recovered']) ;
@@ -18,7 +18,7 @@ fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
   let last_update =total_value['lastupdatedtime'] ;
   let total_case = active_value+recovered_value+death_case;
 
-		document.querySelector('#live_content').innerHTML = ` 
+	document.querySelector('#live_content').innerHTML = ` 
     
     
     <div class="row">
@@ -63,30 +63,46 @@ fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
                 </div>
               </div>
            
-              </div>
+              </div> `;
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    `;
+
+             
+              
+  
+
+
+  let state_value = data.state_wise;
 
 
 
- })
- .catch(err => {
-  console.error(err);
+ 
+
+
+
+  document.querySelector('#state_live').innerHTML = html;
+
+
  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* .catch(err => {
+  console.error(err);
+ }); */
 
 
 

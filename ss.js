@@ -9,7 +9,9 @@ fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
  .then(response => response.json())
  .then(data => {
 
-  let total_value = data.total_values;
+  const total_value = data.total_values;
+  
+
   console.log(data);  
   
   let active_value = Number(total_value['active']) ;
@@ -66,142 +68,239 @@ fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
               </div> `;
 
 
+
+/* 
+const state_html = document.querySelector('#state_live').innerHTML = `
+  
+  <div class="row">
+    <div class="col-lg-12 mbr-col-md-10 text-center">
+      <div class="card wrap">
+        <div class="card-header">
+        
+        <h1><span class="badge badge-secondary">a s_active_value}</span>a s_active_value}</h1>
+        
+        </div>
+        <div class=" card-body">
+        
+        
+
+
+
+
+              <div class="col-lg-2 col-md-4 body-align">
+          
+              <div class=" ">
+                <i class="fa fa-3x fa-stethoscope" style=" color: rgba(17, 100, 224, 0.685);" aria-hidden="true"></i>
+                <div class="count" style="font-size:100%;">	<p>astateData['active']}</p></div>
+                <div class="title" style="font-family:verdana;">Active</div>
+              </div>
+
+              </div>
+              <div class="col-lg-2 col-md-4 body-align">                  
+                <div class="">
+                  <i class="fa fa-3x fa-heart" style=" color: rgb(231, 37, 37);" aria-hidden="true" ></i>
+                  <div class="count" style="font-size:100%;"><p>astateData['recovered']}</p> </div>
+                  <div class="title" style="font-family:verdana;">Recovered</div>
+                </div>
+              </div>
+              <div class=col-lg-2 col-md-4 body-align">                  
+                <div class=" ">
+                  <i class="fa fa-3x fa-industry" style=" color: rgba(32, 53, 85, 0.699);" aria-hidden="true"></i>
+                  <div class="count" style="font-size:100%; "><p>astateData['confirmed']}</p></div>
+                  <div class="title" >Total</div>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 body-align">                  
+                <div class="">
+                  <i class="fa fa-3x fa-certificate" style=" color: rgba(224, 208, 26, 0.548);" aria-hidden="true"></i>
+                  <div class="count" style="font-size:100%;"><p>astateData['deaths']}</p></div>
+                  <div class="title">Death</div>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 body-align">                  
+                <div class=" ">
+                  <i class="fa fa-3x fa-calendar" style=" color: rgba(40, 238, 195, 0.884);" aria-hidden="true"></i>
+                  <div class="count" style="font-size:100%;"><p>astateData['lastupdatedtime']}</p></div>
+                  <div class="title">time</div>
+                </div>
+              </div>
+
+              
+        </div>
+     
+      </div>
+  
+    </div>
+
+`;
+ */
+
+
+
+
+
+
+
+
+let statesData = data.state_wise
+let states = Object.keys(statesData)
+states.forEach(state => {
+       stateData = statesData[state]
+       console.log(stateData)
+       s_html = `
+      
+       <div class="row">
+       <div class="col-lg-12 mbr-col-md-10 text-center">
+         <div class="card wrap">
+           <div class="card-header">
+           
+           <h3><span class="badge badge-secondary">${stateData.statecode}</span>${stateData.state}</h3>
+           
+           </div>
+           <div class=" card-body setting">
+           
+           
+     
+     
+     
+     
+                 <div class="col-lg-2 col-md-4 body-align">
              
-              
-  
-              let state = [ "Andhra Pradesh",
-              "Arunachal Pradesh",
-              "Assam",
-              "Bihar",
-              "Chhattisgarh",
-              "Goa",
-              "Gujarat",
-              "Haryana",
-              "Himachal Pradesh",
-              "Jammu and Kashmir",
-              "Jharkhand",
-              "Karnataka",
-              "Kerala",
-              "Madhya Pradesh",
-              "Maharashtra",
-              "Manipur",
-              "Meghalaya",
-              "Mizoram",
-              "Nagaland",
-              "Odisha",
-              "Punjab",
-              "Rajasthan",
-              "Sikkim",
-              "Tamil Nadu",
-              "Telangana",
-              "Tripura",
-              "Uttarakhand",
-              "Uttar Pradesh",
-              "West Bengal",
-              "Andaman and Nicobar Islands",
-              "Chandigarh",
-              "Dadra and Nagar Haveli",
-              "Daman and Diu",
-              "Delhi",
-              "Lakshadweep",
-              "Puducherry"];
-
-              
-
- 
-              for (var i = 0; i < state.length; i++) {
-
-                let state_value = data.state_wise.state[i];
-
-                console.log(state_value);
-
-
-
-              }  
- 
-
-
-
-  document.querySelector('#state_live').innerHTML = `
-  
-              <div class="row">
-                <div class="col-lg-12 mbr-col-md-10 text-center">
-                  <div class="card wrap">
-                    <div class="card-header">
-                    
-                    <h1><span class="badge badge-secondary">state code</span>state name</h1>
-                    
-                    </div>
-                    <div class=" card-body">
-                    
-                    
-
-
-
-
-                          <div class="col-lg-2 col-md-4 body-align">
-                      
-                          <div class=" ">
-                            <i class="fa fa-3x fa-stethoscope" style=" color: rgba(17, 100, 224, 0.685);" aria-hidden="true"></i>
-                            <div class="count" style="font-size:100%;">	<p>${active_value}</p></div>
-                            <div class="title" style="font-family:verdana;">Active</div>
-                          </div>
-
-                          </div>
-                          <div class="col-lg-2 col-md-4 body-align">                  
-                            <div class="">
-                              <i class="fa fa-3x fa-heart" style=" color: rgb(231, 37, 37);" aria-hidden="true" ></i>
-                              <div class="count" style="font-size:100%;"><p>${recovered_value}</p> </div>
-                              <div class="title" style="font-family:verdana;">Recovered</div>
-                            </div>
-                          </div>
-                          <div class=col-lg-2 col-md-4 body-align">                  
-                            <div class=" ">
-                              <i class="fa fa-3x fa-industry" style=" color: rgba(32, 53, 85, 0.699);" aria-hidden="true"></i>
-                              <div class="count" style="font-size:100%; "><p>${total_case}</p></div>
-                              <div class="title" >Total</div>
-                            </div>
-                          </div>
-                          <div class="col-lg-2 col-md-4 body-align">                  
-                            <div class="">
-                              <i class="fa fa-3x fa-certificate" style=" color: rgba(224, 208, 26, 0.548);" aria-hidden="true"></i>
-                              <div class="count" style="font-size:100%;"><p>${death_case}</p></div>
-                              <div class="title">Death</div>
-                            </div>
-                          </div>
-                          <div class="col-lg-2 col-md-4 body-align">                  
-                            <div class=" ">
-                              <i class="fa fa-3x fa-calendar" style=" color: rgba(40, 238, 195, 0.884);" aria-hidden="true"></i>
-                              <div class="count" style="font-size:100%;"><p>${last_update}</p></div>
-                              <div class="title">time</div>
-                            </div>
-                          </div>
-
-
-                    </div>
+                 <div class=" ">
+                   <i class="fa fa-3x fa-stethoscope" style=" color: rgba(17, 100, 224, 0.685);" aria-hidden="true"></i>
+                   <div class="count" style="font-size:100%;">	<p>${stateData.active}</p></div>
+                   <div class="title" style="font-family:verdana;">Active</div>
+                 </div>
+     
+                 </div>
+                 <div class="col-lg-2 col-md-4 body-align">                  
+                   <div class="">
+                     <i class="fa fa-3x fa-heart" style=" color: rgb(231, 37, 37);" aria-hidden="true" ></i>
+                     <div class="count" style="font-size:100%;"><p>${stateData.recovered}</p> </div>
+                     <div class="title" style="font-family:verdana;">Recovered</div>
+                   </div>
+                 </div>
+                 <div class=col-lg-2 col-md-4 body-align">                  
+                   <div class=" ">
+                     <i class="fa fa-3x fa-industry" style=" color: rgba(32, 53, 85, 0.699);" aria-hidden="true"></i>
+                     <div class="count" style="font-size:100%; "><p>${stateData.confirmed}</p></div>
+                     <div class="title" >Total</div>
+                   </div>
+                 </div>
+                 <div class="col-lg-2 col-md-4 body-align">                  
+                   <div class="">
+                     <i class="fa fa-3x fa-certificate" style=" color: rgba(224, 208, 26, 0.548);" aria-hidden="true"></i>
+                     <div class="count" style="font-size:100%;"><p>${stateData.deaths}</p></div>
+                     <div class="title">Death</div>
+                   </div>
+                 </div>
+                 <div class="col-lg-2 col-md-4 body-align">                  
+                   <div class=" ">
+                     <i class="fa fa-3x fa-calendar" style=" color: rgba(40, 238, 195, 0.884);" aria-hidden="true"></i>
+                     <div class="count" style="font-size:100%;"><p>${stateData.lastupdatedtime}</p></div>
+                     <div class="title">time</div>
+                   </div>
+                 </div>
+            
                  
-                  </div>
+           </div>
+        
+         </div>
+     
+       </div>`;
+      
+     
+       document.querySelector("#state_live").insertAdjacentHTML("afterbegin",s_html);
+
+
+})
+
+
+
+
+
+
+ /*  */
+
+
+
+
+                
+  
+             
+/* 
               
-                </div>
-              <div class="row mbr-justify-content-center">
-                <div class="col-lg-12 mbr-col-md-10 text-center">
-                  <div class="card wrap">
-                    <div class="card-header"></div>
-                    <div class="card-body">Content</div>
-                    <div class="card-footer">Footer</div>
-                  </div>
+const s_html =  states
+  .map(s_data =>{
+    return `<div class="row">
+    <div class="col-lg-12 mbr-col-md-10 text-center">
+      <div class="card wrap">
+        <div class="card-header">
+        
+        <h1><span class="badge badge-secondary">${s_data.statecode}</span>>${s_data.state}</h1>
+        
+        </div>
+        <div class=" card-body">
+        
+        
+
+
+
+
+              <div class="col-lg-2 col-md-4 body-align">
+          
+              <div class=" ">
+                <i class="fa fa-3x fa-stethoscope" style=" color: rgba(17, 100, 224, 0.685);" aria-hidden="true"></i>
+                <div class="count" style="font-size:100%;">	<p>${s_data.active}</p></div>
+                <div class="title" style="font-family:verdana;">Active</div>
+              </div>
+
+              </div>
+              <div class="col-lg-2 col-md-4 body-align">                  
+                <div class="">
+                  <i class="fa fa-3x fa-heart" style=" color: rgb(231, 37, 37);" aria-hidden="true" ></i>
+                  <div class="count" style="font-size:100%;"><p>>${s_data.recovered}</p> </div>
+                  <div class="title" style="font-family:verdana;">Recovered</div>
                 </div>
               </div>
-              <div class="row mbr-justify-content-center">
-                <div class="col-lg-12 mbr-col-md-10 text-center">
-                  <div class="card wrap">
-                    <div class="card-header"></div>
-                    <div class="card-body">Content</div>
-                    <div class="card-footer">Footer</div>
-                  </div>
+              <div class=col-lg-2 col-md-4 body-align">                  
+                <div class=" ">
+                  <i class="fa fa-3x fa-industry" style=" color: rgba(32, 53, 85, 0.699);" aria-hidden="true"></i>
+                  <div class="count" style="font-size:100%; "><p>>${s_data.confirmed}</p></div>
+                  <div class="title" >Total</div>
                 </div>
               </div>
-  `;
+              <div class="col-lg-2 col-md-4 body-align">                  
+                <div class="">
+                  <i class="fa fa-3x fa-certificate" style=" color: rgba(224, 208, 26, 0.548);" aria-hidden="true"></i>
+                  <div class="count" style="font-size:100%;"><p>>${s_data.deaths}</p></div>
+                  <div class="title">Death</div>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 body-align">                  
+                <div class=" ">
+                  <i class="fa fa-3x fa-calendar" style=" color: rgba(40, 238, 195, 0.884);" aria-hidden="true"></i>
+                  <div class="count" style="font-size:100%;"><p>${s_data.lastupdatedtime}</p></div>
+                  <div class="title">time</div>
+                </div>
+              </div>
+         
+              
+        </div>
+     
+      </div>
+  
+    </div>`;
+  }).join(""); */
+  /* document.querySelector("#live_state").insertAdjacentHTML("afterbegin",s_html); */
+ 
+
+   
+
+
+
+ 
+ 
 
 
  });

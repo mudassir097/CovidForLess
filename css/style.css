@@ -10,7 +10,9 @@
 
 @import url(line-icons.css);
 
-
+.stting{
+    border: 2px solid red;
+}
 
 body {
 

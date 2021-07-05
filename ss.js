@@ -157,9 +157,9 @@ states.forEach(state => {
            <h3><span class="badge badge-secondary">${stateData.statecode}</span>${stateData.state}</h3>
            
            </div>
-           <div class=" card-body setting">
+           <div class=" card-body">
            
-           
+           <div class=" ml-lg-5"></div>
      
      
      

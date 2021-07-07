@@ -1,28 +1,41 @@
 (function() {
-    var questions = [{
-      question: "What does COVID-19 stand for?",
-      choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
-     
-    }, {
-      question: "What does COVID-19 stand for?",
-      choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
-    }, {
-     
-      question: "What does COVID-19 stand for?",
-      choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
-      
-    }, {
-      question: "What does COVID-19 stand for?",
-      choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
-      
-    }, {
-      question: "What does COVID-19 stand for?",
-      choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
-      
-
-
-
-    }];
+  var questions = [{
+    question: "Do you experience fever or chills?",
+    choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
+   
+  }, {
+    question: "Do you have cough and sore throught?",
+    choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
+  }, {
+    question: "Congestion or runny nose?",
+    choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
+  }, {
+    question: "Do you have Muscle, body aches and Headache?",
+    choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
+  },{
+   
+    question: "Do you have shortness of breath or difficulty breathing?",
+    choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
+    
+  }, {
+    question: "Persistent pain or pressure in the chest?",
+    choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
+    
+  }, {
+    question: "Loss of taste or smell?",
+    choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
+  }, {
+    question: "Do you have symptoms of fatigue?",
+    choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
+  },
+   {
+    question: "Nausea, vomiting  and Diarrhea?",
+    choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
+  }, {
+    question: "Inability to wake or stay awake?",
+    choices: ['less', 'little' , 'casually' , 'thoughroly', 'high']
+  }
+  ];
     
     var questionCounter = 0; //Tracks question number
     var selections = []; //Array containing user choices

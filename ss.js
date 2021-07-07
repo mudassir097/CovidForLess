@@ -1,4 +1,3 @@
-
 fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
  "method": "GET",
  "headers": {
@@ -12,7 +11,7 @@ fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
   const total_value = data.total_values;
   
 
-  console.log(data);  
+  console.log(total_value);  
   
   let active_value = Number(total_value['active']) ;
   let recovered_value = Number(total_value['recovered']) ;
@@ -68,72 +67,6 @@ fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
               </div> `;
 
 
-
-/* 
-const state_html = document.querySelector('#state_live').innerHTML = `
-  
-  <div class="row">
-    <div class="col-lg-12 mbr-col-md-10 text-center">
-      <div class="card wrap">
-        <div class="card-header">
-        
-        <h1><span class="badge badge-secondary">a s_active_value}</span>a s_active_value}</h1>
-        
-        </div>
-        <div class=" card-body">
-        
-        
-
-
-
-
-              <div class="col-lg-2 col-md-4 body-align">
-          
-              <div class=" ">
-                <i class="fa fa-3x fa-stethoscope" style=" color: rgba(17, 100, 224, 0.685);" aria-hidden="true"></i>
-                <div class="count" style="font-size:100%;">	<p>astateData['active']}</p></div>
-                <div class="title" style="font-family:verdana;">Active</div>
-              </div>
-
-              </div>
-              <div class="col-lg-2 col-md-4 body-align">                  
-                <div class="">
-                  <i class="fa fa-3x fa-heart" style=" color: rgb(231, 37, 37);" aria-hidden="true" ></i>
-                  <div class="count" style="font-size:100%;"><p>astateData['recovered']}</p> </div>
-                  <div class="title" style="font-family:verdana;">Recovered</div>
-                </div>
-              </div>
-              <div class=col-lg-2 col-md-4 body-align">                  
-                <div class=" ">
-                  <i class="fa fa-3x fa-industry" style=" color: rgba(32, 53, 85, 0.699);" aria-hidden="true"></i>
-                  <div class="count" style="font-size:100%; "><p>astateData['confirmed']}</p></div>
-                  <div class="title" >Total</div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-4 body-align">                  
-                <div class="">
-                  <i class="fa fa-3x fa-certificate" style=" color: rgba(224, 208, 26, 0.548);" aria-hidden="true"></i>
-                  <div class="count" style="font-size:100%;"><p>astateData['deaths']}</p></div>
-                  <div class="title">Death</div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-4 body-align">                  
-                <div class=" ">
-                  <i class="fa fa-3x fa-calendar" style=" color: rgba(40, 238, 195, 0.884);" aria-hidden="true"></i>
-                  <div class="count" style="font-size:100%;"><p>astateData['lastupdatedtime']}</p></div>
-                  <div class="title">time</div>
-                </div>
-              </div>
-
-              
-        </div>
-     
-      </div>
-  
-    </div>
-
-`;
- */
 
 
 
@@ -220,136 +153,9 @@ states.forEach(state => {
 
 
 
- /*  */
-
-
-
-
-                
-  
-             
-/* 
-              
-const s_html =  states
-  .map(s_data =>{
-    return `<div class="row">
-    <div class="col-lg-12 mbr-col-md-10 text-center">
-      <div class="card wrap">
-        <div class="card-header">
-        
-        <h1><span class="badge badge-secondary">${s_data.statecode}</span>>${s_data.state}</h1>
-        
-        </div>
-        <div class=" card-body">
-        
-        
-
-
-
-
-              <div class="col-lg-2 col-md-4 body-align">
-          
-              <div class=" ">
-                <i class="fa fa-3x fa-stethoscope" style=" color: rgba(17, 100, 224, 0.685);" aria-hidden="true"></i>
-                <div class="count" style="font-size:100%;">	<p>${s_data.active}</p></div>
-                <div class="title" style="font-family:verdana;">Active</div>
-              </div>
-
-              </div>
-              <div class="col-lg-2 col-md-4 body-align">                  
-                <div class="">
-                  <i class="fa fa-3x fa-heart" style=" color: rgb(231, 37, 37);" aria-hidden="true" ></i>
-                  <div class="count" style="font-size:100%;"><p>>${s_data.recovered}</p> </div>
-                  <div class="title" style="font-family:verdana;">Recovered</div>
-                </div>
-              </div>
-              <div class=col-lg-2 col-md-4 body-align">                  
-                <div class=" ">
-                  <i class="fa fa-3x fa-industry" style=" color: rgba(32, 53, 85, 0.699);" aria-hidden="true"></i>
-                  <div class="count" style="font-size:100%; "><p>>${s_data.confirmed}</p></div>
-                  <div class="title" >Total</div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-4 body-align">                  
-                <div class="">
-                  <i class="fa fa-3x fa-certificate" style=" color: rgba(224, 208, 26, 0.548);" aria-hidden="true"></i>
-                  <div class="count" style="font-size:100%;"><p>>${s_data.deaths}</p></div>
-                  <div class="title">Death</div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-4 body-align">                  
-                <div class=" ">
-                  <i class="fa fa-3x fa-calendar" style=" color: rgba(40, 238, 195, 0.884);" aria-hidden="true"></i>
-                  <div class="count" style="font-size:100%;"><p>${s_data.lastupdatedtime}</p></div>
-                  <div class="title">time</div>
-                </div>
-              </div>
-         
-              
-        </div>
-     
-      </div>
-  
-    </div>`;
-  }).join(""); */
-  /* document.querySelector("#live_state").insertAdjacentHTML("afterbegin",s_html); */
- 
-
-   
-
-
 
  
  
 
 
  });
-
-
-
-
-
-/* 
-for (var i = 0; i < grpd[date_key].length; i++) */
-
-
-
-
-
-
-
-
-
-
- /* .catch(err => {
-  console.error(err);
- }); */
-
-
-
-
-//html injection to be used....
-/* 
-document.querySelector('#live_content').innerHTML = `
-
-D7E3FC
-
-
-
-
-` */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

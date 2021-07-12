@@ -176,12 +176,12 @@
          
         
       }
-      if( numCorrect <= 10){
+      if( numCorrect <= 20){
         score.append('low symptoms, just take proper precautions.');
         return score;
       }
-      else if( numCorrect > 10 && numCorrect <=15){
-        score.append('Home quanrantine');
+      else if( numCorrect > 20 && numCorrect <=35){
+        score.append('Home quanrantine and concern with your doctor.');
         return score;
       }
       else {

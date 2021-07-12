@@ -11,7 +11,6 @@ fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
   const total_value = data.total_values;
   
 
-  console.log(total_value);  
   
   let active_value = Number(total_value['active']) ;
   let recovered_value = Number(total_value['recovered']) ;
@@ -79,7 +78,7 @@ let statesData = data.state_wise
 let states = Object.keys(statesData)
 states.forEach(state => {
        stateData = statesData[state]
-       console.log(stateData)
+      
        s_html = `
       
        <div class="row">
